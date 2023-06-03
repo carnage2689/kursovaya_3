@@ -5,7 +5,7 @@ def convert_date(date):
     return '.'.join(date[:10].split('-')[::-1])
 
 def masking_card(card_info):
-    if card_info.startswith('Visa Classic') or card_info.startswith('Maestro'):
+    if card_info.startswith('Visa Classic') or card_info.startswith('Maestro') or card_info.startswith('Visa Platinum') or card_info.startswith('MasterCard'):
         card_info = card_info.split()
         number = card_info[-1]
         hide_number = number[:6] + '*' * 2 + number[-4:]
@@ -36,5 +36,5 @@ def main():
     for operation in data[:5]:
         show_operation(operation)
 
-
-main()
+if __name__ == '__main__':
+    main()
